@@ -1,8 +1,7 @@
 # CentOS 5.11 에서 실행되는 옛날 PostgreSQL 서버들
 
  ```bash
-# mkdir tempdir
-# cd tempdir
+# cd /root && mkdir tempdir && cd tempdir
 # git clone https://github.com/i0seph/docker-centos-5.11-i386.git .
 # docker build -t ioseph/centos5-32:1.0 .
 # cd /root && mkdir tempdir2 && cd /root/tempdir2
