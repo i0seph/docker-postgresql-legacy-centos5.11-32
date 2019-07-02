@@ -19,7 +19,7 @@
 # docker run -it --rm --user postgres -e PATH=/postgres/5.0/bin:/usr/bin:/bin \
     -e PGDATA=/data -e LANG=ko_KR.UTF-8 -e LC_COLLATE=C -e USER=postgres \
     -v /docker/pgdata/5.0:/data --entrypoint initdb ioseph/centos5-pglegacy-32
-# docker run --name postgresql-5.0 --user postgres \
+# docker run -d --name postgresql-5.0 --user postgres \
     -e PATH=/postgres/5.0/bin:/usr/bin:/bin \
     -e PGDATA=/data \
     -e LANG=ko_KR.UTF-8 \
