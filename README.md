@@ -70,3 +70,9 @@
 # docker exec -it postgresql-5.0 psql template1
 # docker stop postgresql-5.0
 ```
+
+## 뒷정리
+```
+# docker rm postgresql-x.x
+# docker image rm ioseph/centos5-xxx
+```
