@@ -12,6 +12,8 @@
  ```
 
 ## 버전별 컨테이너 만들고 서버 실행
+
+### 5.0(POSTGRES95 1.0) & 5.1(POSTGRES95 1.0.09) 버전
 ```bash
 # mkdir -p /docker/pgdata && chmod 777 /docker/pgdata
 # docker run -it --rm --user postgres -v /docker/pgdata:/data \
@@ -29,6 +31,40 @@
     --entrypoint postmaster \
     ioseph/centos5-pglegacy-32
 ```
+
+### 6.x 버전
+```bash
+# docker run -it --rm --user postgres -e PATH=/postgres/6.0/bin:/usr/bin:/bin \
+    -e PGDATA=/data/6.0 -e LANG=ko_KR.UTF-8 -e LC_COLLATE=C -e USER=postgres \
+    -v /docker/pgdata:/data --entrypoint initdb ioseph/centos5-pglegacy-32 -l /postgres/6.0/lib
+# docker run -d --name postgresql-6.0 --user postgres \
+    -e PATH=/postgres/6.0/bin:/usr/bin:/bin \
+    -e PGDATA=/data \
+    -e LANG=ko_KR.UTF-8 \
+    -e LC_COLLATE=C \
+    -e USER=postgres \
+    -v /docker/pgdata/6.0:/data \
+    --entrypoint postmaster \
+    ioseph/centos5-pglegacy-32
+```
+
+### 7.0.3 버전
+```bash
+# docker run -it --rm --user postgres -e PATH=/postgres/7.0.3/bin:/usr/bin:/bin \
+    -e PGDATA=/data/7.0 -e LANG=ko_KR.UTF-8 -e LC_COLLATE=C -e USER=postgres \
+    -v /docker/pgdata:/data --entrypoint initdb ioseph/centos5-pglegacy-32
+# docker run -d --name postgresql-7.0.3 --user postgres \
+    -e PATH=/postgres/7.0.3/bin:/usr/bin:/bin \
+    -e PGDATA=/data \
+    -e LANG=ko_KR.UTF-8 \
+    -e LC_COLLATE=C \
+    -e USER=postgres \
+    -v /docker/pgdata/7.0:/data \
+    --entrypoint postmaster \
+    ioseph/centos5-pglegacy-32
+```
+
+
 ## 접속해 보고, 컨테이너 종료
 ```bash
 # docker exec -it postgresql-5.0 psql template1
