@@ -1,5 +1,7 @@
 # CentOS 5.11 에서 실행되는 옛날 PostgreSQL 서버들
 
+<p style='color:red'>이 서버들은 운영 환경에서 사용할 수 없습니다!</p>
+
 ## 이미지 만들고 쉘 접속해 보기
 ```bash
 # cd /root && mkdir tempdir && cd tempdir
