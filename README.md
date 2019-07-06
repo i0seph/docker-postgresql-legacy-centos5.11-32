@@ -12,8 +12,10 @@ docker build -t ioseph/centos5-32:1.0 .
 ```
 
 ## 빌드 환경 복사
+```
 cd ~ && mkdir tempdir2 && cd tempdir2
 git clone https://github.com/i0seph/docker-postgresql-legacy-centos5.11-32.git .
+```
 
 ## 버전별 컨테이너 만들기
 
@@ -36,7 +38,9 @@ docker run -it --name postgresql-7.0 i386/centos5/postgres:7.0.3 -E unicode
 ```
 
 ## 각 서버 실행
+```
 docker start postgresql-x.x
+```
 
 ## 각 서버 사용해 보기
 ```bash
